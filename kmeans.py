@@ -42,7 +42,7 @@ class MyKmeans:
     def _label_examples(self, cent_distances):
         labels = np.zeros(cent_distances.shape[0])
         for i, example_dist in enumerate(cent_distances):
-            labels[i] = np.argmax(example_dist).astype(int)
+            labels[i] = np.argmin(example_dist).astype(int)
         return labels
 
     def _recentroide(self, X, labels_, centroids):
